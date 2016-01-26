@@ -59,8 +59,8 @@ $( document ).ready(function() {
 
 			var plots ;
 			var angleIncrease = (2 * Math.PI)/plots,
-			plotX = 200,
-			plotY = 200;
+			plotX = windowWidth/2,
+			plotY = windowHeight/2;
 			
 			
 			// numberCircles = number_emails/plots;
