@@ -1,4 +1,4 @@
-$( document ).ready(function() {
+$(document).ready(function(e) {
 
 	// adjust canvas height
 	var windowWidth = $(window).width();
@@ -7,14 +7,47 @@ $( document ).ready(function() {
 	$('#canvas').attr("width",windowWidth);
 	$('#canvas').attr("height", windowHeight);
 
-	document.onmousemove = function (e) {
-	    mouseX = e.pageX;
-	    mouseY = e.pageY;
-
-	};
 	
+
+	var ctx = document.getElementById('canvas').getContext('2d');
+
+
+	// destroy and redraw graphic on mousemove
+	$(document).mousemove(function(event){
+		var mouseX = event.pageX,
+			mouseY = event.pageY;
+
+		plotX = mouseX,
+		plotY = mouseY;	
+
+		// destroy
+		ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+		//redraw
+		// window.requestAnimationFrame(makeGraphic);
+		makeGraphic();
+	})
+
+	// initial center of the graphics circle
+	var plotX = windowWidth/2,
+		plotY = windowHeight/2;
+
+	var allEmailsSum = 1924;
+
+	var gap = 2,
+		dotRadius = 3,
+		initialRingRadius = 20;
+		
+
+	
+
 	//load data
-	_.each(exesdata, function(value, index){
+	var makeGraphic = function(){
+		_.each(exesdata, function(value, index){
+
+		var	ringRadius,
+			dotsPerRing = (2 * Math.PI * ringRadius)/((2*ringRadius)+gap),
+			numOfRings = allEmailsSum;
 	  
 		// make variables of value
 		var boyfriend = value['boyfriend-code'],
@@ -22,85 +55,57 @@ $( document ).ready(function() {
 		number_chats = value["chat"],
 		color_dark = value["color-dark"],
 		color_light = value["color-light"];
-
-	  	//get a reference to the canvas
-		
-	  	var ctx = document.getElementById('canvas').getContext('2d');
-
-		
-
-		// canvas variables
-
-		var circleRadius = 5;
 		
 		// dot function
-	  	var makecircle = function(mouseX, mouseY){
+	  	var makeDot = function(mouseX, mouseY){
 	  		
 	  		ctx.fillStyle = color_light;
 	  		ctx.strokeStyle = '#fff';
 	  		//draw a circle
 			ctx.beginPath();
 			//  ctx.rect(x, y, width, height)
-			ctx.arc(x, y, circleRadius,0, Math.PI*2);  
+			ctx.arc(x, y, dotRadius,0, Math.PI*2);  
 			ctx.stroke();
 			ctx.fill();
 			ctx.closePath();
 
 	  	}
 
-	  	
-
-
-
+	  	// for (var i = 0; i < 10; i++){
 	  	for (var i = 0; i < number_emails; i++){
-	  		// var x = windowWidth/1.3-(number_emails-i)*5;
-			// var y = windowHeight/3+index*5;
-			// console.log(number_emails)
 
-			var plots ;
-			var angleIncrease = (2 * Math.PI)/plots,
-			plotX = windowWidth/2,
-			plotY = windowHeight/2;
-			
+			var ringRadius= initialRingRadius + ((2*dotRadius)+ gap)*i; 
+			var angleIncrease = (2 * Math.PI)/dotsPerRing;
+
+			// console.log(ringRadius)
 			
 			// numberCircles = number_emails/plots;
 			if (index == 0){
-				r = 10+ i*0.5;
-				plots = 20;
+				ringRadius = 10+ i*0.5;
+				dotsPerRing = 20;
 			} else if (index == 1){
-				r = 30 + i*0.5;
-				plots = 30;
+				ringRadius = 30 + i*0.5;
+				dotsPerRing = 30;
 			} else if (index == 2){
-				r = 50 + i*0.5;
-				plots = 40;
+				ringRadius = 50 + i*0.5;
+				dotsPerRing = 40;
 			} else {
-				r = 100 + i*0.5;
-				plots = 50;
+				ringRadius = 100 + i*0.5;
+				dotsPerRing = 50;
 			}
 
-			x = r * Math.cos(i*angleIncrease)+plotX,
-			y = r * Math.sin(i*angleIncrease)+plotY;
+			x = ringRadius * Math.cos(i*angleIncrease) + plotX,
+			y = ringRadius * Math.sin(i*angleIncrease) + plotY;
 
-			console.log(angleIncrease)
-
-	  		makecircle();
+	  		makeDot();
 
 	  	}
 
-	 //  	canvas.addEventListener('mousemove',function(e){
-		//   makecircle(e.clientX, e.clientY);
-		// });
 
+		});
+	} 
 
-		
-		
-		  
-
-
-
-	});
-
-
+	makeGraphic();
 	
 
 });
