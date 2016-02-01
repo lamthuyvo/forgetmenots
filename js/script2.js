@@ -53,7 +53,7 @@ $(document).ready(function() {
 		// dot function
 	  	var makeDot = function(mouseX, mouseY){
 	  		
-	  		ctx.fillStyle = '#ccc';
+	  		ctx.fillStyle = color;
 	  		ctx.strokeStyle = '#fff';
 	  		//draw a circle
 			ctx.beginPath();
@@ -69,29 +69,53 @@ $(document).ready(function() {
 
 		  	
 
-
-	  		// for (var i = 0; i < 10; i++){
-
-		  	for (var i = 0; i < 1924; i++){
-				
+	  	for (var index = 0; index < 10; index++){
+					
+		  	for (var i = 0; i < 100; i++){
+				color = '#f563f1';
 			
 				var ringRadius= initialRingRadius + ((dotRadius)+ gap)*i; 
 				// dotsPerRing = (2*ringRadius)/((gap+2*dotRadius)*i);
 				
 				var angleIncrease = (2 * Math.PI)/dotsPerRing;
 
-				dotsPerRing = 100
-				ringRadius = 20+ i*0.2;
+				dotsPerRing = 10*index;
+				ringRadius = 5+ index*15;
 				
 
 				x = ringRadius * Math.cos(i*angleIncrease) + plotX,
 				y = ringRadius * Math.sin(i*angleIncrease) + plotY;
-				
-
 
 		  		makeDot();
 
 	  		}
+
+	  	
+	  	}
+
+	  	for (var index = 0; index < 10; index++){
+					
+		  	for (var i = 0; i < 100; i++){
+				color = '#00ceff';
+			
+				var ringRadius= initialRingRadius + ((dotRadius)+ gap)*i; 
+				// dotsPerRing = (2*ringRadius)/((gap+2*dotRadius)*i);
+				
+				var angleIncrease = (2 * Math.PI)/dotsPerRing;
+
+				dotsPerRing = 10*index;
+				ringRadius = 150+ (index)*15;
+				
+
+				x = ringRadius * Math.cos(i*angleIncrease) + plotX,
+				y = ringRadius * Math.sin(i*angleIncrease) + plotY;
+
+		  		makeDot();
+
+	  		}
+
+	  	
+	  	}
 		
 	} 
 
