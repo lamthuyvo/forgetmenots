@@ -81,19 +81,25 @@ $(document).ready(function(e) {
 			// console.log(ringRadius)
 			
 			
+			dotsPerRing = (2*ringRadius)/(gap+2*dotRadius);
+			
 			// numberCircles = number_emails/plots;
 			if (index == 0){
 				ringRadius = 25+ i*0.3;
-				dotsPerRing = 30;
+				dotsPerRing = (2*ringRadius)/(gap+2*dotRadius);
+				
 			} else if (index == 1){
-				ringRadius = 110 + i*0.2;
-				dotsPerRing = 30;
+				ringRadius = 75+ i*0.3;
+				dotsPerRing = (2*ringRadius)/(gap+2*dotRadius);
+				
 			} else if (index == 2){
-				ringRadius = 120 + i*0.3;
-				dotsPerRing = 30;
+				ringRadius =  100 + i*0.3;
+				dotsPerRing = (2*ringRadius)/(gap+2*dotRadius);
+				
 			} else {
-				ringRadius = 300 + i*0.3;
-				dotsPerRing = 30;
+				ringRadius = 125 + i*0.3;
+				dotsPerRing = (2*ringRadius)/(gap+2*dotRadius);
+				
 			}
 
 			x = ringRadius * Math.cos(i*angleIncrease) + plotX,
