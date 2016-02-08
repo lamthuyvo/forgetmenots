@@ -28,6 +28,8 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light","Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #787878;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -53,48 +55,98 @@ table {
 	border-spacing: 0;
 }
 
+i{
+	font-style: italic;
+    color: #B6B6B6;
+    font-weight: 200;
+
+}
+
+
 /* Your styles go here */
 
+h1, h2, h3, h4, h5, h6{
+	font-family:"HelveticaNeue-Light", "Helvetica Neue Light","Helvetica Neue", Helvetica, Arial, sans-serif; 
+	
+}
+
+h1{
+	font-size: 2em;
+	line-height: 1.8em;
+	color:#b84ab4;
+}
+
+a{
+	color:#b84ab4;
+}
+
+ p{
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light","Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5em;
+    color: #787878;
+    padding-bottom: 1.5em;
+
+}
+
+.wrap{
+	position: absolute;
+	width:100%;
+}
+
+.intro {
+	text-align: center;
+    position: relative;
+    margin: 20px auto;
+    width: 50%;
+    padding: 15px 35px ;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+.legend{
+	margin-left: 100px;
+
+
+}
+
+
+.button {
+	font-family:"HelveticaNeue-Light", "Helvetica Neue Light","Helvetica Neue", Helvetica, Arial, sans-serif; 
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 16px;
+  background: #9e9e9e;
+  padding: 10px 10px 10px 10px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #7c7c7d;
+  text-decoration: none;
+}
+
+.border-right{
+	padding-right:10px;
+	border-right: 1px solid #ccc;
+}
+
+@media (max-width:480px) {
+	.intro {
+		width: 95%;
+    	padding: 15px 15px ;
+	}
+
+	#canvas{
+
+
+	}
+
+}
 
 /* CSS, which stands for cascading style sheets, are styles you set for your HTML components */
 /* Everything has a default style  (think ugly) and here is how you can modify your style*/
 
 /* class selection*/
-.wrap{
-	width:100%;
-}
-.container{
-	width: 700px;
-	position: relative;
-	margin: 20px auto;
-}
-
-/* Id selection */
-#content-content{
-}
-
-/* Tag selection */
-div{
-}
-
-div.wrap{
-}
-
-.wrap p{
-	font-family: Arial, sans-serif;
-	color: #000000;
-	font-size: 14px;
-	line-height: 1.2em;
-}
-
-h1 {
-  font-family: Arial, sans-serif;
-  color: #BF08B8;
-  font-size: 42px;
-}
-
-#canvas{
-	position: absolute;
-    top: 0;
-    left: 0;
-}

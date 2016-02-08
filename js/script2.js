@@ -65,7 +65,9 @@ $(document).ready(function() {
 
 	  	// for (var i = 0; i < 10; i++){
 
-	  	for (var index = 0; index < 10; index++){
+
+	  	for (var index = 0; index < 37; index++){
+
 					
 		  	for (var i = 0; i < 100; i++){
 				color = '#f563f1';
@@ -75,7 +77,7 @@ $(document).ready(function() {
 				
 				var angleIncrease = (2 * Math.PI)/dotsPerRing;
 
-				dotsPerRing = 10*index;
+				dotsPerRing = 40;
 				ringRadius = 5+ index*15;
 				
 
@@ -89,29 +91,9 @@ $(document).ready(function() {
 	  	
 	  	}
 
-	  	for (var index = 0; index < 10; index++){
-					
-		  	for (var i = 0; i < 100; i++){
-				color = '#00ceff';
-			
-				var ringRadius= initialRingRadius + ((dotRadius)+ gap)*i; 
-				// dotsPerRing = (2*ringRadius)/((gap+2*dotRadius)*i);
-				
-				var angleIncrease = (2 * Math.PI)/dotsPerRing;
-
-				dotsPerRing = 10*index;
-				ringRadius = 150+ (index)*15;
-				
-
-				x = ringRadius * Math.cos(i*angleIncrease) + plotX,
-				y = ringRadius * Math.sin(i*angleIncrease) + plotY;
-
-		  		makeDot();
-
-	  		}
+		
 
 	  	
-	  	}
 		
 	} 
 

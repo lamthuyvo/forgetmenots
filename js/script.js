@@ -59,7 +59,8 @@ $(document).ready(function(e) {
 		// dot function
 	  	var makeDot = function(mouseX, mouseY){
 	  		
-	  		ctx.fillStyle = color_light;
+	  		ctx.fillStyle = 
+	  		;
 	  		ctx.strokeStyle = '#fff';
 	  		//draw a circle
 			ctx.beginPath();
@@ -81,24 +82,24 @@ $(document).ready(function(e) {
 			// console.log(ringRadius)
 			
 			
-			dotsPerRing = (2*ringRadius)/(gap+2*dotRadius);
+			dotsPerRing = 100;
 			
 			// numberCircles = number_emails/plots;
 			if (index == 0){
-				ringRadius = 25+ i*0.3;
-				dotsPerRing = (2*ringRadius)/(gap+2*dotRadius);
+				ringRadius = 25+ i;
+				dotsPerRing = 15;
 				
 			} else if (index == 1){
 				ringRadius = 75+ i*0.3;
-				dotsPerRing = (2*ringRadius)/(gap+2*dotRadius);
+				dotsPerRing =25;
 				
 			} else if (index == 2){
 				ringRadius =  100 + i*0.3;
-				dotsPerRing = (2*ringRadius)/(gap+2*dotRadius);
+				dotsPerRing =30;
 				
 			} else {
 				ringRadius = 125 + i*0.3;
-				dotsPerRing = (2*ringRadius)/(gap+2*dotRadius);
+				dotsPerRing =50;
 				
 			}
 
@@ -114,6 +115,34 @@ $(document).ready(function(e) {
 	} 
 
 	makeGraphic();
+
+	var targetX = 0,
+	    targetY = 0,
+	    x = 10,
+	    y = 10,
+	    velX = 0,
+	    velY = 0,
+	    speed = 5;
+	function update(){
+	    var tx = targetX - x,
+	        ty = targetY - y,
+	        dist = Math.sqrt(tx*tx+ty*ty),
+	        rad = Math.atan2(ty,tx),
+	        angle = rad/Math.PI * 180;
+
+	        velX = (tx/dist)*speed,
+	        velY = (ty/dist)*speed;
+	    
+	        x += velX
+	        y += velY
+	      	
+	      	makeGraphic();
+	    
+	    
+	    setTimeout(update,10);
+	}
+
+	update();
 	
 
 });
