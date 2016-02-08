@@ -24,8 +24,8 @@ $(document).ready(function() {
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 
 		//redraw
-		// window.requestAnimationFrame(makeGraphic);
-		makeGraphic();
+		window.requestAnimationFrame(makeGraphic);
+		// makeGraphic();
 	})
 
 	// initial center of the graphics circle
@@ -44,8 +44,6 @@ $(document).ready(function() {
 	//load data
 	var makeGraphic = function(){
 		
-
-
 		var	ringRadius,
 			dotsPerRing = (2 * Math.PI * ringRadius)/((2*ringRadius)+gap);
 	  
@@ -66,8 +64,6 @@ $(document).ready(function() {
 	  	}
 
 	  	// for (var i = 0; i < 10; i++){
-
-		  	
 
 	  	for (var index = 0; index < 10; index++){
 					
