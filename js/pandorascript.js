@@ -6,23 +6,36 @@ $(document).ready(function() {
 	        	
 
 
-	    var canvas = $("#canvas");
+	    var canvas = $("#dots");
 	    var context = canvas.get(0).getContext("2d");
-	    canvas.attr("width", 100);
-	    canvas.attr("height", $(window).get(0).innerHeight);
+	   
+	    var windowWidth = $(window).get(0).innerWidth, 
+	    	windowHeight = $(window).get(0).innerHeight,
+			marginX = 10,
+			marginY = 10,
+			columnWidth = $('.content').width(),
+			leftX = (windowWidth - columnWidth)/2 ;
+
+
+	    canvas.attr("width", columnWidth);
+	    canvas.attr("height", windowHeight);
+	    canvas.css("margin-left", leftX);
 
 
 
-	    var canvasWidth = canvas.width();
-	    var canvasHeight = canvas.height();
+
+	    var canvasWidth = columnWidth;
+	    var canvasHeight = 200;
 	    
 	    
+
+
 
 
 	    // $(window).resize(resizeCanvas);
 
 	    function resizeCanvas() {
-	        canvas.attr("width", $(window).get(0).innerWidth);
+	        // canvas.attr("width", $(window).get(0).innerWidth);
 	        canvas.attr("height", $(window).get(0).innerHeight);
 	        canvas.css("opacity", 1);
 
@@ -30,10 +43,17 @@ $(document).ready(function() {
 	        canvasWidth = canvas.width();
 	        canvasHeight = canvas.height();
 	    };
-	     $('.button').on("click", function(){
+
+	     $('#pandora').on("click", function(){
 	     	resizeCanvas();
+
 	     })
 
+	    function animate() {
+            update();
+            draw();
+            setTimeout(animate, 33);
+        }
         var Sphere = function (x, y, radius, mass, vX, vY) {
             this.x = x;
             this.y = y;
@@ -53,14 +73,14 @@ $(document).ready(function() {
                     this.x = this.radius;
                     this.vX *= -1;
                 } else if (this.x + this.radius > canvasWidth) {
-                    this.x = canvasWidth - this.radius;
+                    this.x = canvasWidth  - this.radius;
                     this.vX *= -1;
                 }
 
                 if (this.y - this.radius < 0) {
                     this.y = this.radius;
                     this.vY *= -1;
-                } else if (this.y + this.radius > canvasHeight) {
+                } else if (this.y + this.radius  > canvasHeight) {
                     this.y = canvasHeight - this.radius;
                     this.vY *= -1;
                 }
@@ -89,11 +109,7 @@ $(document).ready(function() {
 	    }
 	    loadContent();
 
-        function animate() {
-            update();
-            draw();
-            setTimeout(animate, 33);
-        }
+        
 
 
 		function update() {
