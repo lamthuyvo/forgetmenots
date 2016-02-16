@@ -33,19 +33,13 @@
 <body>
 	
 	<div class="wrap"> 	
-	
-		<div  class="section" id="forget-me-nots">
 
-			<div class="content">
+		<div class="section">
+			<div class="content" id="intro">
 				<h1>Forget Me Nots</h1>
-				<div class="intro-icon desktop"><i class="fa fa-paper-plane-o"></i></div>
-
-				<p>There are 1,924 emails of Allison’s ex-boyfriends in her gmail account. Remnants of a relationships that tell partial stories of the beginning, middle and end of each relationship.</p>
-
-				<p>It’s the digital equivalent of the shoe box of memorabilia people sometimes keep in a dusty corner of their attic. Their content oscillates between humorous and logistical, profound and mundane.</p> 
-
-				<p>All of these memories, available via a few key strokes. With digital storage getting cheaper and cheaper we have gone from a default of forgetting to a <a href="http://www.amazon.com/Delete-The-Virtue-Forgetting-Digital/dp/0691150362" target="_blank">default of digitally assisted remembering</a>. The question is: should we or should we not revisit them?</p>
-
+				<div class="intro-icon"><i class="fa fa-paper-plane-o"></i></div>
+				<p style="text-align:center">A brief exploration of the memories that lurk in one person's inbox.</p>
+			
 				<div class="type-wrap">
 					<i class="fa fa-search" id="reset"></i>
 		            <div id="typed-strings">
@@ -55,19 +49,45 @@
 		                <p>There's that draft I never sent...</p>
 		                <p>Maybe I shouldn't go there.</p>
 		                <p>Maybe I <i>should</i> go to there</p>
+		                <p>How many emails did he send?</p>
 		            </div>
 		            <span id="typed" style="white-space:pre;"></span>
 		        </div>
+
+		      
+
+		        <div class="button-container" style="text-align: center;">
+					<div class="button" id="start">Tell me more</div>
+				</div>
+
+		    </div>
+
+		</div>
+	
+		<div class="section" id="forget-me-nots">
+
+			<div class="content" id="forget-me-nots-1">
+				<br>
+
+				<p class="first-graph">There are 1,924 emails of Allison’s ex-boyfriends in her gmail account. Remnants of a relationships that tell partial stories of the beginning, middle and end of each relationship.</p>
+			</div>
+			<div class="content">
+				<div id="chart-container" style="width: 100%; margin: 0 auto"></div>
+			</div>
+
+			<div class="content" id="forget-me-nots-2">
+				<p>It’s the digital equivalent of the shoe box of memorabilia people sometimes keep in a dusty corner of their attic. Their content oscillates between humorous and logistical, profound and mundane.</p> 
+
+				<p>With digital storage getting cheaper and cheaper we have gone from a default of forgetting to a <a href="http://www.amazon.com/Delete-The-Virtue-Forgetting-Digital/dp/0691150362" target="_blank">default of digitally assisted remembering</a>. The question is: should we or should we not revisit them?</p>
+
+				
 
 				<div class="button-container">
 					<div class="button" id="rabbit-hole">Let's go there</div>
 				</div>
 
-				
-
-
-
 			</div>
+
 		</div>
 
 		<div class="section" >
@@ -126,7 +146,7 @@
 						<div class="legend-box"><div class='circle boyfriend1'></div><div class='legend-text'>ex 1 (273 emails)</div></div>
 						<div class="legend-box"><div class='circle boyfriend2'></div><div class='legend-text'>ex 2 (61 emails)</div></div>
 						<div class="legend-box"><div class='circle boyfriend3'></div><div class='legend-text'>ex 3 (604 emails)</div></div>
-						<div class="legend-box"><div class='circle boyfriend4'></div><div class='legend-text'>ex 4 (7 emails)</div></div>
+						<div class="legend-box"><div class='circle boyfriend4'></div><div class='legend-text'>ex 4 (860 emails)</div></div>
 						<div class="legend-box"><div class='circle boyfriend5'></div><div class='legend-text'>ex 5 (126 emails)</div></div>
 					</div>
 					
@@ -150,6 +170,8 @@
 	<script src="js/libs/modernizr.js"></script>
 	<script src="js/libs/typed.js"></script>
 	<script src="js/libs/jquery-ui.js"></script>
+	<script src="js/libs/highcharts.js"></script>
+	
 
 	
 
@@ -161,8 +183,9 @@
 
 	<!-- custom script -->
 	<script src="js/dotscript.js"></script>
-
 	<script src="js/pandorascript.js"></script>
+	<script src="js/highchart.js"></script>
+	
 	
 	
 

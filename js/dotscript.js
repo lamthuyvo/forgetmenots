@@ -14,8 +14,7 @@ $(document).ready(function() {
 	}
 
 	type();
-	
-	
+
 
 	
 	// adjust canvas height
@@ -25,6 +24,12 @@ $(document).ready(function() {
 
 	// set height for all sections to screen height
 	$('.section').css("min-height", windowHeight);
+
+	// set chart height
+	var forgetmenot1 = $('#forget-me-nots-1').height();
+	var	forgetmenot2 = $('#forget-me-nots-2').height();
+
+    $('#chart-container').css("height", windowHeight - (forgetmenot1 + forgetmenot2 +  75));
 
 	$('#rabbit-hole').on("click", function(){
 		$('html,body').animate({
@@ -42,14 +47,26 @@ $(document).ready(function() {
 		$('html,body').animate({
 	        scrollTop: $('#dots').offset().top,
 	    }, 800, 'easeOutExpo');
-	})
+	});
+
+	$('#start').on("click", function(){
+		$('html,body').animate({
+	        scrollTop: $('#forget-me-nots').offset().top,
+	    }, 800, 'easeOutExpo');
+	});
 
 	// measure height of content t adjust mouse movement
-	var digiNostalgiaHeight = $('#digital-nostalgia').height();
+	var digiNostalgiaHeight = $('#digital-nostalgia').height(),
+		introHeight = $("#intro").height();
+
+
+
+	$("#intro").css("margin-top", (windowHeight - introHeight)/2)
 
 	var columnWidth1 = $('.content').width(),
 		leftX1 = (windowWidth - columnWidth1)/2,
 		dotcanvasHeight = windowHeight - digiNostalgiaHeight - 150;
+
 
 	$('#dot').attr("width", columnWidth1);
 	$('#dot').attr("height", dotcanvasHeight);
@@ -60,19 +77,10 @@ $(document).ready(function() {
 	var canvas1 =document.getElementById("dot"),
     ctx1 = canvas1.getContext("2d");
 
-    // var mobilegap = 0;
-
-    // if (windowWidth < 480 && windowWidth > 321){
-    // 	mobilegap = 100;
-    // } else if( windowWidth < 320){
-    // 	mobilegap = 40;
-    // }
-
-
     var targetX = leftX1 + columnWidth1/2,
-	    targetY = $('#dot').offset().top + dotcanvasHeight/2 ,
-	    x = 10,
-	    y = 10,
+	    targetY = dotcanvasHeight/2,
+	    x = leftX1 + columnWidth1/3,
+	    y = 50,
 	    velX = 0,
 	    velY = 0,
 	    speed = 5;
@@ -90,10 +98,10 @@ $(document).ready(function() {
 	        x += velX
 	        y += velY
 	            
-	        ctx1.clearRect(0,0,600,800);
+	        ctx1.clearRect(0,0,600,1200);
 	        ctx1.beginPath();
 	        ctx1.fillStyle = "#f563f1";
-	        ctx1.arc(x - leftX1 ,y - (windowHeight + digiNostalgiaHeight + 30),3,0,Math.PI*2);
+	        ctx1.arc(x - leftX1 ,y,3,0,Math.PI*2);
 	        ctx1.fill();
 	    
 	    setTimeout(update,10);
@@ -104,7 +112,8 @@ $(document).ready(function() {
 
 	canvas1.addEventListener("mousemove", function(e){
 	    targetX = e.pageX;
-	    targetY = e.pageY;
+	    targetY = e.pageY - $('#dot').offset().top;
+
 
 	});
 
