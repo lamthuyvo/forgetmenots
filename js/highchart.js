@@ -8,13 +8,18 @@ $(function () {
         },
         exporting: { enabled: false } ,
         title: {
-            text: ''
+            text: 'Emails Allison and her exes exchanged',
+            style:{
+                color: '#5e5e5e',
+                align: 'center',
+                font:"normal 14px 'Vollkorn',Georgia, serif"
+            }
         },
         legend:{
           itemStyle: {
             color: '#5e5e5e',
             align: 'center',
-            font:"normal 14px 'Vollkorn',Georgia, serif"
+            font:"normal 12px 'Vollkorn',Georgia, serif"
           }
         
         },
@@ -27,7 +32,7 @@ $(function () {
                     style: {
                         color: '#5e5e5e',
                         align: 'center',
-                        font: "normal 14px 'Vollkorn',Georgia, serif"
+                        font: "normal 12px 'Vollkorn',Georgia, serif"
                     }
                 }
         },
@@ -38,7 +43,7 @@ $(function () {
                     style: {
                         color: '#5e5e5e',
                         align: 'center',
-                        font: "normal 14px 'Vollkorn',Georgia, serif"
+                        font: "normal 12px 'Vollkorn',Georgia, serif"
                     }
                 }
         },
@@ -49,8 +54,8 @@ $(function () {
          },
          
         tooltip: {
-            headerFormat: '<span style="font: bold 12px \'Vollkorn\',Georgia, serif; color:#5e5e5e;">{series.name}</span><br>',
-            pointFormat: '<span style="font:normal 12px \'Vollkorn\',Georgia, serif; color:#5e5e5e;">{point.x:%b %e,  20%y}: {point.y:f} emails</span>'
+            headerFormat: '<span style="font: bold 10px \'Vollkorn\',Georgia, serif; color:#5e5e5e;">{series.name}</span><br>',
+            pointFormat: '<span style="font:normal  10px \'Vollkorn\',Georgia, serif; color:#5e5e5e;">{point.x:%b %e,  20%y}: {point.y:f} emails</span>'
         },
 
         plotOptions: {
@@ -62,7 +67,7 @@ $(function () {
         },
 
         series: [{
-            name: 'Boyfriend 1',
+            name: 'ex 1',
             color: '#f563f1',
             data: [
                 
@@ -243,7 +248,7 @@ $(function () {
                 [Date.UTC(  2015  , 8 , 13  ),  2]
             ]
         },{
-            name: 'Boyfriend 2',
+            name: 'ex 2',
             color:'#00ceff',
             data: [
                 [Date.UTC(  2009  , 2 , 18  ),  1],
@@ -297,7 +302,7 @@ $(function () {
                 [Date.UTC(  2014  , 2 , 19  ),  1]    
                 ]
         },{
-          name:'Boyfriend 3',
+          name:'ex 3',
           color:'#01f7b6',
           data:[
                 [Date.UTC(  2009  , 1 , 13  ),  1],
@@ -564,7 +569,7 @@ $(function () {
           
           ]
         },{
-          name:'Boyfriend 4',
+          name:'ex 4',
           color:'#dbbc3d',
           data:[
                   [Date.UTC(  2009  , 12  , 2 ),  2],
@@ -921,7 +926,7 @@ $(function () {
           
           ]
         },{
-            name: 'Boyfriend 5',
+            name: 'ex 5',
             color:'#cccccc',
             data:[
               [Date.UTC(  2014  , 4 , 24  ),  2],

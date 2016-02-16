@@ -29,7 +29,7 @@ $(document).ready(function() {
 	var forgetmenot1 = $('#forget-me-nots-1').height();
 	var	forgetmenot2 = $('#forget-me-nots-2').height();
 
-    $('#chart-container').css("height", windowHeight - (forgetmenot1 + forgetmenot2 +  75));
+    $('#chart-container').css("height", windowHeight - (forgetmenot1 + forgetmenot2 +  60));
 
 	$('#rabbit-hole').on("click", function(){
 		$('html,body').animate({
