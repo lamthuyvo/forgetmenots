@@ -28,7 +28,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
-	font-family: "HelveticaNeue-Light", "Helvetica Neue Light","Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: 'Vollkorn', Garamond, serif;
 	color: #787878;
 }
 /* HTML5 display-role reset for older browsers */
@@ -57,7 +57,6 @@ table {
 
 i{
 	font-style: italic;
-    color: #B6B6B6;
     font-weight: 200;
 
 }
@@ -66,25 +65,41 @@ i{
 /* Your styles go here */
 
 h1, h2, h3, h4, h5, h6{
-	font-family:"HelveticaNeue-Light", "Helvetica Neue Light","Helvetica Neue", Helvetica, Arial, sans-serif; 
+	font-family:'Oswald', Helvetica, Arial, sans-serif; 
 	
 }
 
 h1{
 	font-size: 2em;
-	color:#b84ab4;
+	color:#37424A;
 	text-align: center;
+	line-height: 2em;
+	margin-bottom: 20px;
+	margin-top: 20px;
 }
 
-a{
-	color:#b84ab4;
+a {
+    color: #b84ab4;
+    text-decoration: none;
 }
+
+.first-graph:first-letter { 
+	float: left; 
+	color: #37424A; 
+	font-size: 2.5em; 
+	line-height: 1em; 
+	padding-top: 4px; 
+	padding-right: 10px; 
+	padding-left: 3px; 
+	font-family: 'Vollkorn',Georgia, serif; 
+}
+
 
  p{
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light","Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Vollkorn', Garamond, serif;
     font-size: 16px;
     line-height: 1.5em;
-    color: #787878;
+    color: #393939;
     padding-bottom: 1.5em;
 
 }
@@ -105,52 +120,220 @@ a{
 .content{
 	width:50%;
 	margin:0 auto;
+	max-width:600px;
+	text-align: justify;
 }
 
 
-.legend{
-	margin-left: 100px;
-}
+
 
 
 .button {
-	font-family:"HelveticaNeue-Light", "Helvetica Neue Light","Helvetica Neue", Helvetica, Arial, sans-serif; 
-	-webkit-border-radius: 0;
-	-moz-border-radius: 0;
-	border-radius: 0px;
-	font-family: Arial;
-	color: #ffffff;
-	font-size: 16px;
-	background: #9e9e9e;
-	padding: 10px 10px 10px 10px;
-	text-decoration: none;
-	cursor: pointer;
-	width:100%;
-	text-align: center;
+	font-family:'Oswald', Helvetica, Arial, sans-serif; 
+	color: #fff ;
+    background-color:  #7c7c7d;
+    font-weight: normal;
+	display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid #7c7c7d;
+    border-radius: 4px;
 }
 
 .button:hover {
-  background: #7c7c7d;
+  background: #888;
   text-decoration: none;
   
+}
+
+
+#dot{
+	border-radius: 5px;
 }
 
 
 
 #description{
 	margin-top: 200px;
-	padding:15px;
+	padding: 15px 0px;
+
 }
 
 .swiper-container {
     width: 100%;
     height: 700px;
-}   
+}  
+
+.mobile{
+	display:none;
+}
+
+.desktop{
+	display:block;
+}
 
 @media (max-width:480px) {
+	.content{
+		width:90%;
+	}
+	.mobile{
+		display:block;
+	}
+	.desktop{
+		display:none;
+	}
+	p{
+		font-size:14px;
+		padding-bottom: 1em;
+	}
+	.button-container{
+		text-align: center;
+	}
 
+	h1 {
+	    font-size: 1.5em;
+	    line-height: 1em;
+	    margin-bottom: 15px;
+	    margin-top: 15px;
+	}
 	
 
+}
+
+/* for script animation*/
+
+ .typed-cursor{
+            opacity: 1;
+            font-weight: 100;
+            -webkit-animation: blink 0.7s infinite;
+            -moz-animation: blink 0.7s infinite;
+            -ms-animation: blink 0.7s infinite;
+            -o-animation: blink 0.7s infinite;
+            animation: blink 0.7s infinite;
+        }
+        @-keyframes blink{
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+        }
+        @-webkit-keyframes blink{
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+        }
+        @-moz-keyframes blink{
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+        }
+        @-ms-keyframes blink{
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+        }
+        @-o-keyframes blink{
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+        }
+.type-wrap {
+    height: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 10px;
+    margin-bottom: 20px;
+    color:#787878 ;
+}
+
+.border-box {
+    height: 180px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 10px;
+    margin-bottom: 20px;
+    position: absolute;
+    color: #787878;
+    /* width: 529px; */
+}
+
+i.fa.fa-search {
+    padding-right: 5px;
+}
+
+.footnote{
+	font-size: 0.8em;
+    color: #888;
+    line-height: 1.5em;
+    clear: both;
+}
+
+
+
+.intro-icon {
+    text-align: center;
+    margin: 0px 0px 25px 0;
+    font-size: 1.5em;
+    
+
+}
+
+.intro-icon i{
+	color:#f563f1;
+}
+
+
+.circle{
+	border-radius: 50%;
+    width: 5px;
+    height: 5px;
+    float: left;
+    margin-top: 6px;
+    margin-right: 3px;
+}
+
+.boyfriend1{
+	background-color:#f563f1;
+}
+.boyfriend2{
+	background-color:#00ceff;
+}
+.boyfriend3{
+	background-color:#01f7b6;
+}
+.boyfriend4{
+	background-color:#dbbc3d;
+}
+.boyfriend5{
+	background-color:#cccccc;
+}
+
+
+.legend{
+	width:100%;
+}
+
+.legend-text{
+	 float:left;
+}
+
+.legend-box{
+    padding-right: 10px;
+    float: left;
+    width: 46%;
 }
 
 /* CSS, which stands for cascading style sheets, are styles you set for your HTML components */

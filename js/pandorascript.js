@@ -1,11 +1,6 @@
 $(document).ready(function() {
 
 
-
-    	
-	        	
-
-
 	    var canvas = $("#dots");
 	    var context = canvas.get(0).getContext("2d");
 	   
@@ -14,11 +9,19 @@ $(document).ready(function() {
 			marginX = 10,
 			marginY = 10,
 			columnWidth = $('.content').width(),
-			leftX = (windowWidth - columnWidth)/2 ;
+			leftX = (windowWidth - columnWidth)/2,
+			borderBox= $('.border-box'),
+			legend = $('.legend');
+
+		legend.css("margin-top", windowHeight - 100)
+
+
+		borderBox.css("margin-left", leftX);
+		borderBox.css("width", columnWidth-20);
 
 
 	    canvas.attr("width", columnWidth);
-	    canvas.attr("height", windowHeight);
+	    canvas.attr("height", windowHeight - 100);
 	    canvas.css("margin-left", leftX);
 
 
@@ -36,7 +39,7 @@ $(document).ready(function() {
 
 	    function resizeCanvas() {
 	        // canvas.attr("width", $(window).get(0).innerWidth);
-	        canvas.attr("height", $(window).get(0).innerHeight);
+	        canvas.attr("height", windowHeight- 100);
 	        canvas.css("opacity", 1);
 
 
@@ -46,6 +49,7 @@ $(document).ready(function() {
 
 	     $('#pandora').on("click", function(){
 	     	resizeCanvas();
+	     	borderBox.animate({"opacity": 0}, 800);
 
 	     })
 
