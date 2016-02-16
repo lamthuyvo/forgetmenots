@@ -19,7 +19,7 @@ $(function () {
           itemStyle: {
             color: '#5e5e5e',
             align: 'center',
-            font:"normal 12px 'Vollkorn',Georgia, serif"
+            font:"normal 13px 'Vollkorn',Georgia, serif"
           }
         
         },
@@ -32,7 +32,7 @@ $(function () {
                     style: {
                         color: '#5e5e5e',
                         align: 'center',
-                        font: "normal 12px 'Vollkorn',Georgia, serif"
+                        font: "normal 13px 'Vollkorn',Georgia, serif"
                     }
                 }
         },
@@ -43,7 +43,7 @@ $(function () {
                     style: {
                         color: '#5e5e5e',
                         align: 'center',
-                        font: "normal 12px 'Vollkorn',Georgia, serif"
+                        font: "normal 13px 'Vollkorn',Georgia, serif"
                     }
                 }
         },
@@ -54,8 +54,8 @@ $(function () {
          },
          
         tooltip: {
-            headerFormat: '<span style="font: bold 10px \'Vollkorn\',Georgia, serif; color:#5e5e5e;">{series.name}</span><br>',
-            pointFormat: '<span style="font:normal  10px \'Vollkorn\',Georgia, serif; color:#5e5e5e;">{point.x:%b %e,  20%y}: {point.y:f} emails</span>'
+            headerFormat: '<span style="font: bold 12px \'Vollkorn\',Georgia, serif; color:#5e5e5e;">{series.name}</span><br>',
+            pointFormat: '<span style="font:normal  12px \'Vollkorn\',Georgia, serif; color:#5e5e5e;">{point.x:%b %e,  20%y}: {point.y:f} emails</span>'
         },
 
         plotOptions: {
